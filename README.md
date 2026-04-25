@@ -1,3 +1,7 @@
+[//]: # (Image References)
+
+[image1]: ./assets/turtlebot3_burger.png "Robotmodell"
+
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
 
@@ -10,6 +14,7 @@ Készítette:
 # Tartalomjegyzék
 - [Feladatleírás](#feladatleírás)
 - [Előkövetelmények](#előkövetelmények)
+- [TurtleBot3](#turtlebot3)
 
 # Feladatleírás
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
@@ -30,7 +35,7 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
         ```bash
         sudo apt install ros-jazzy-ros-gz
         ```
-- A projekt során [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)-at használunk `burger` konfigurációban
+- A projekt során [TurtleBot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)-at használunk `burger` konfigurációban
     - Az alábbi csomagok segítségével biztosított a kompatibilitás:
         ```bash
         git clone -b ros2 https://github.com/MOGI-ROS/turtlebot3_msgs
@@ -45,3 +50,13 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     ```bash
     git clone -b humble-devel https://github.com/MOGI-ROS/DynamixelSDK/
     ```
+
+# TurtleBot3
+A `burger` konfigurációjú TurtleBot3-at a `./line_follower_color_recognition/urdf/turtlebot3_burger.urdf` fájl írja le, szimulációs működését a `./line_follower_color_recognition/models/turtlebot3_burger/model.sdf` fájl tartalmazza.
+
+A robotmodell megtekinthető RViz-ben a `./line_follower_color_recognition/launch/check_urdf.launch.py` launch fájl segítségével:
+```bash
+ros2 launch line_follower_color_recognition check_urdf.launch.py
+```
+
+![alt text][image1]
