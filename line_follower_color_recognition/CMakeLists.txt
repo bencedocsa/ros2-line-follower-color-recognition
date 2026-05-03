@@ -24,10 +24,12 @@ if(BUILD_TESTING)
 endif()
 
 install(DIRECTORY
+  gazebo_models
   launch
   models
   rviz
   urdf
+  worlds
   DESTINATION share/${PROJECT_NAME}
 )
 
