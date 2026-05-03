@@ -50,6 +50,10 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     ```bash
     git clone -b humble-devel https://github.com/MOGI-ROS/DynamixelSDK/
     ```
+- [MOGI Trajectory Server](https://github.com/MOGI-ROS/mogi_trajectory_server)
+    ```bash
+    git clone https://github.com/MOGI-ROS/mogi_trajectory_server
+    ```
 
 # TurtleBot3
 A `burger` konfigurációjú TurtleBot3-at a `./line_follower_color_recognition/urdf/turtlebot3_burger.urdf` fájl írja le, szimulációs működését a `./line_follower_color_recognition/models/turtlebot3_burger/model.sdf` fájl tartalmazza.
