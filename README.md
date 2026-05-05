@@ -37,6 +37,11 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
         ```bash
         sudo apt install ros-jazzy-ros-gz
         ```
+- URDF fájlok megnyitásához:
+    ```bash
+    sudo apt install ros-jazzy-urdf
+    sudo apt install ros-jazzy-urdf-launch
+    ```
 - A projekt során [TurtleBot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)-at használunk `burger` konfigurációban
     - Az alábbi csomagok segítségével biztosított a kompatibilitás:
         ```bash
