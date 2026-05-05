@@ -58,9 +58,9 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     ```
 
 # TurtleBot3
-A `burger` konfigurációjú TurtleBot3-at a `./line_follower_color_recognition/urdf/turtlebot3_burger.urdf` fájl írja le, szimulációs működését a `./line_follower_color_recognition/models/turtlebot3_burger/model.sdf` fájl tartalmazza.
+A `burger` konfigurációjú TurtleBot3-at a [turtlebot3_burger.urdf](./line_follower_color_recognition/urdf/turtlebot3_burger.urdf) fájl írja le, szimulációs működését a [turtlebot3_burger/model.sdf](./line_follower_color_recognition/models/turtlebot3_burger/model.sdf) fájl tartalmazza.
 
-A robotmodell megtekinthető RViz-ben a `./line_follower_color_recognition/launch/check_urdf.launch.py` launch fájl segítségével:
+A robotmodell megtekinthető RViz-ben a [check_urdf.launch.py](./line_follower_color_recognition/launch/check_urdf.launch.py) launch fájl segítségével:
 ```bash
 ros2 launch line_follower_color_recognition check_urdf.launch.py
 ```
@@ -68,9 +68,9 @@ ros2 launch line_follower_color_recognition check_urdf.launch.py
 ![alt text][image1]
 
 # Pálya
-A projekt során használt pálya fekete alapon egy színes vonalat tartalmaz. A vonal három szakaszból áll: piros, zöld és kék.
+A projekt során használt pálya fekete alapon egy színes vonalat tartalmaz. A vonal három szakaszból áll: piros, zöld és kék. A modell a [gazebo_models/track](./line_follower_color_recognition/gazebo_models/track/) mappában található.
 
-A pálya megtekinthető és a robottal bejárható a `./line_follower_color_recognition/launch/spawn_robot.launch.py` launch fájl segítségével:
+A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./line_follower_color_recognition/launch/spawn_robot.launch.py) launch fájl segítségével:
 ```bash
 ros2 launch line_follower_color_recognition spawn_robot.launch.py
 ```
