@@ -1,6 +1,7 @@
 [//]: # (Image References)
 
 [image1]: ./assets/turtlebot3_burger.png "Robotmodell"
+[image2]: ./assets/track.png "Pálya"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
@@ -15,6 +16,7 @@ Készítette:
 - [Feladatleírás](#feladatleírás)
 - [Előkövetelmények](#előkövetelmények)
 - [TurtleBot3](#turtlebot3)
+- [Pálya](#pálya)
 
 # Feladatleírás
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
@@ -64,3 +66,13 @@ ros2 launch line_follower_color_recognition check_urdf.launch.py
 ```
 
 ![alt text][image1]
+
+# Pálya
+A projekt során használt pálya fekete alapon egy színes vonalat tartalmaz. A vonal három szakaszból áll: piros, zöld és kék.
+
+A pálya megtekinthető és a robottal bejárható a `./line_follower_color_recognition/launch/spawn_robot.launch.py` launch fájl segítségével:
+```bash
+ros2 launch line_follower_color_recognition spawn_robot.launch.py
+```
+
+![alt text][image2]
