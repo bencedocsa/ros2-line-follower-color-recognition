@@ -79,5 +79,17 @@ A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./l
 ```bash
 ros2 launch line_follower_color_recognition spawn_robot.launch.py
 ```
+```bash
+ros2 run line_follower_color_recognition_py line_follower
+```
 
+Node amivel képeket lehet készíteni (az "s" gomb lenyomásával készít képet, ilyenkot be kell kattintani az adott terminálba ahol el lett indítva a képmentő):
+```bash
+ros2 run line_follower_color_recognition_py save_training_images
+```
+
+Robot irányításához szükséges parancs:
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
 ![alt text][image2]
