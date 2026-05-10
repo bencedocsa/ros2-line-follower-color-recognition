@@ -1,18 +1,18 @@
 <?xml version='1.0'?>
 <sdf version='1.10'>
-    <model name='track'>
+    <model name='track_dark'>
       <link name='link'>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://track/meshes/track.dae</uri>
+              <uri>model://track_dark/meshes/track_dark.dae</uri>
             </mesh>
           </geometry>
         </visual>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://track/meshes/track.dae</uri>
+              <uri>model://track_dark/meshes/track_dark.dae</uri>
             </mesh>
           </geometry>
         </collision>

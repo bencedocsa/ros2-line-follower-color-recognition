@@ -1,7 +1,8 @@
 [//]: # (Image References)
 
 [image1]: ./assets/turtlebot3_burger.png "Robotmodell"
-[image2]: ./assets/track.png "Pálya"
+[image2]: ./assets/track_dark.png "Pálya sötét alapon"
+[image3]: ./assets/track_light.png "Pálya világos alapon"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
@@ -73,14 +74,23 @@ ros2 launch line_follower_color_recognition check_urdf.launch.py
 ![alt text][image1]
 
 # Pálya
-A projekt során használt pálya fekete alapon egy színes vonalat tartalmaz. A vonal három szakaszból áll: piros, zöld és kék. A modell a [gazebo_models/track](./line_follower_color_recognition/gazebo_models/track/) mappában található.
+A projekt során használt pálya egy színes vonalat tartalmaz sötét vagy világos alapon. A vonal három szakaszból áll: piros, zöld és kék. A modellek a [gazebo_models](./line_follower_color_recognition/gazebo_models/) mappában találhatóak.
 
-A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./line_follower_color_recognition/launch/spawn_robot.launch.py) launch fájl segítségével:
+A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./line_follower_color_recognition/launch/spawn_robot.launch.py) launch fájl segítségével.
+
+Pálya sötét alapon:
 ```bash
-ros2 launch line_follower_color_recognition spawn_robot.launch.py
+ros2 launch line_follower_color_recognition spawn_robot.launch.py world:=track_dark.sdf
 ```
 
 ![alt text][image2]
+
+Pálya világos alapon:
+```bash
+ros2 launch line_follower_color_recognition spawn_robot.launch.py world:=track_light.sdf
+```
+
+![alt text][image3]
 
 A neurális háló tanításához szükséges képeket a [save_training_images](./line_follower_color_recognition_py/line_follower_color_recognition_py/save_training_images.py) node segítségével lehet elkészíteni:
 ```bash

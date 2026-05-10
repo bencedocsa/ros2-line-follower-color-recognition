@@ -44,7 +44,7 @@ def generate_launch_description():
     )
 
     world_arg = DeclareLaunchArgument(
-        'world', default_value='track.sdf',
+        'world', default_value='track_dark.sdf',
         description='Name of the Gazebo world file to load'
     )
 
