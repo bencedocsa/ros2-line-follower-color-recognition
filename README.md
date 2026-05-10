@@ -62,6 +62,13 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     ```bash
     git clone https://github.com/MOGI-ROS/mogi_trajectory_server
     ```
+- Python csomagok:
+    - `tensorflow==2.18.0`
+    - `imutils`
+    - `scikit-learn`
+    - `opencv-python==4.11.0.86`
+    - `matplotlib`
+    - `numpy==1.26.4`
 
 # TurtleBot3
 A `burger` konfigurációjú TurtleBot3-at a [turtlebot3_burger.urdf](./line_follower_color_recognition/urdf/turtlebot3_burger.urdf) fájl írja le, szimulációs működését a [turtlebot3_burger/model.sdf](./line_follower_color_recognition/models/turtlebot3_burger/model.sdf) fájl tartalmazza.
