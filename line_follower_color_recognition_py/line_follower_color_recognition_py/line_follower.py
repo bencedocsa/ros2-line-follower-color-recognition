@@ -108,7 +108,7 @@ class ImageSubscriber(Node):
         L_masked, mask = self.apply_polygon_mask(L)
 
         # 4. For light line on dark background in simulation:
-        lightnessMask = self.threshold_binary(L_masked, (50, 255))
+        lightnessMask = self.threshold_binary(L_masked, (50, 200))
 
         # For light line on dark background in real life environment:
         #lightnessMask = self.threshold_binary(L_masked, (180, 255))
