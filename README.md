@@ -79,17 +79,20 @@ A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./l
 ```bash
 ros2 launch line_follower_color_recognition spawn_robot.launch.py
 ```
-```bash
-ros2 run line_follower_color_recognition_py line_follower
-```
 
-Node amivel képeket lehet készíteni (az "s" gomb lenyomásával készít képet, ilyenkot be kell kattintani az adott terminálba ahol el lett indítva a képmentő):
+![alt text][image2]
+
+A neurális háló tanításához szükséges képeket a [save_training_images](./line_follower_color_recognition_py/line_follower_color_recognition_py/save_training_images.py) node segítségével lehet elkészíteni:
 ```bash
 ros2 run line_follower_color_recognition_py save_training_images
 ```
 
-Robot irányításához szükséges parancs:
+Ehhez segítségül használható a [line_follower](./line_follower_color_recognition_py/line_follower_color_recognition_py/line_follower.py) node, ami képfeldolgozás segítségével automatikusan végigvezeti a robotot a pályán:
+```bash
+ros2 run line_follower_color_recognition_py line_follower
+```
+
+Robot manuálisan is irányítható:
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
-![alt text][image2]
