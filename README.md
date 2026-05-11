@@ -3,6 +3,7 @@
 [image1]: ./assets/turtlebot3_burger.png "Robotmodell"
 [image2]: ./assets/track_dark.png "Pálya sötét alapon"
 [image3]: ./assets/track_light.png "Pálya világos alapon"
+[image4]: ./assets/model_training.png "Tanítási eredmények"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
@@ -18,6 +19,7 @@ Készítette:
 - [Előkövetelmények](#előkövetelmények)
 - [TurtleBot3](#turtlebot3)
 - [Pálya](#pálya)
+- [Neurális hálózat](#neurális-hálózat)
 
 # Feladatleírás
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
@@ -64,6 +66,7 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     ```
 - Python csomagok:
     - `tensorflow==2.18.0`
+    - `keras==3.7.0`
     - `imutils`
     - `scikit-learn`
     - `opencv-python==4.11.0.86`
@@ -99,7 +102,7 @@ ros2 launch line_follower_color_recognition spawn_robot.launch.py world:=track_l
 
 ![alt text][image3]
 
-A neurális háló tanításához szükséges képeket a [save_training_images](./line_follower_color_recognition_py/line_follower_color_recognition_py/save_training_images.py) node segítségével lehet elkészíteni:
+A neurális háló tanításához szükséges képeket a [save_training_images](./line_follower_color_recognition_py/line_follower_color_recognition_py/save_training_images.py) node segítségével lehet elkészíteni a [saved_images](./line_follower_color_recognition_py/saved_images/) mappába:
 ```bash
 ros2 run line_follower_color_recognition_py save_training_images
 ```
@@ -113,3 +116,19 @@ Robot manuálisan is irányítható:
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
+# Neurális hálózat
+A projekt során készített kétkimenetű konvolúciós neurális hálózat (CNN) két klasszifikációt végez el a roboton lévő kamera képe alapján:
+- Meghatározza, hogy a robotnak mit kell tennie a vonal követése érdekében: előremenni, jobbra fordulni, balra fordulni.
+- Meghatározza, hogy a robot által követett vonal aktuális szakasza milyen színű: piros, kék, zöld.
+
+A hálózat tanítása a [train_network.py](./line_follower_color_recognition_py/line_follower_color_recognition_py/train_network.py) Python kód segítségével történik.
+```bash
+python train_network.py
+```
+
+A tanításhoz használt képek a [training_images](./line_follower_color_recognition_py/training_images/) mappában találhatóak felcímkézve. Ezek a képek a [track_dark](./line_follower_color_recognition/worlds/track_dark.sdf) és a [track_light](./line_follower_color_recognition/worlds/track_light.sdf) bejárása során készültek.
+
+A modell tanítása kihagyható, mert a [network_model](./line_follower_color_recognition_py/network_model/) mappában megtalálható a tanított modell.
+
+![alt text][image4]
