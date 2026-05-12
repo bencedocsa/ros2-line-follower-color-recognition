@@ -4,6 +4,7 @@
 [image2]: ./assets/track_dark.png "Pálya sötét alapon"
 [image3]: ./assets/track_light.png "Pálya világos alapon"
 [image4]: ./assets/model_training.png "Tanítási eredmények"
+[image5]: ./assets/path_visualizer.png "Vizualizációs node"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
@@ -20,6 +21,7 @@ Készítette:
 - [TurtleBot3](#turtlebot3)
 - [Pálya](#pálya)
 - [Neurális hálózat](#neurális-hálózat)
+- [Vizualizációs node](#vizualizációs-node)
 
 # Feladatleírás
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
@@ -143,3 +145,11 @@ A node használata során a robot a különböző színű vonalszakaszokon elté
 | piros | 1              |
 | zöld  | 0,9            |
 | kék   | 1,1            |
+
+# Vizualizációs node
+A robot által megtett utat és a követett vonal színét a [path_visualizer](./line_follower_color_recognition_py/line_follower_color_recognition_py/path_visualizer.py) node segítségével lehet kirajzoltatni RVizben.
+```bash
+ros2 run line_follower_color_recognition_py path_visualizer
+```
+
+![alt text][image5]

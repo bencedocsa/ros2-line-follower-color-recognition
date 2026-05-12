@@ -3,6 +3,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import CompressedImage, Image
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Int32
 from ament_index_python.packages import get_package_share_directory
 
 from tensorflow.keras.preprocessing.image import img_to_array
@@ -62,6 +63,8 @@ class ImageSubscriber(Node):
         )
 
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+
+        self.color_publisher = self.create_publisher(Int32, 'line_color', 10)
         
         # Initialize CvBridge
         self.bridge = CvBridge()
@@ -123,6 +126,8 @@ class ImageSubscriber(Node):
         msg.angular.y = 0.0
         msg.angular.z = 0.0
 
+        color_msg = Int32()
+
         image = cv2.resize(img, (self.image_size, self.image_size))
         image = img_to_array(image)
         image = np.array(image, dtype="float") / 255.0
@@ -156,6 +161,8 @@ class ImageSubscriber(Node):
         elif color_idx == 2: # Blue
             colorSpeedFactor = 1.1
 
+        color_msg.data = int(color_idx)
+
         if direction_idx == 0: # Forward
             msg.angular.z = 0.0
             msg.linear.x = 0.08 * colorSpeedFactor
@@ -171,6 +178,7 @@ class ImageSubscriber(Node):
 
         # Publish cmd_vel
         self.publisher.publish(msg)
+        self.color_publisher.publish(color_msg)
 
     # Helper to read the .keras file's metadata
     def get_keras_version_from_keras_file(self, path):

@@ -25,6 +25,7 @@ setup(
             'line_follower = line_follower_color_recognition_py.line_follower:main',
             'line_follower_cnn = line_follower_color_recognition_py.line_follower_cnn:main',
             'save_training_images = line_follower_color_recognition_py.save_training_images:main',
+            'path_visualizer = line_follower_color_recognition_py.path_visualizer:main'
         ],
     },
 )
