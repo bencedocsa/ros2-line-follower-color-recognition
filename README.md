@@ -22,6 +22,7 @@ Készítette:
 - [Pálya](#pálya)
 - [Neurális hálózat](#neurális-hálózat)
 - [Vizualizációs node](#vizualizációs-node)
+- [Bemutató](#bemutató)
 
 # Feladatleírás
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
