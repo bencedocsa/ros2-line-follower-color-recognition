@@ -132,3 +132,14 @@ A tanításhoz használt képek a [training_images](./line_follower_color_recogn
 A modell tanítása kihagyható, mert a [network_model](./line_follower_color_recognition_py/network_model/) mappában megtalálható a tanított modell.
 
 ![alt text][image4]
+
+A neurális háló használható vonalkövetésre a [line_follower_cnn](./line_follower_color_recognition_py/line_follower_color_recognition_py/line_follower_cnn.py) node segítségével:
+```bash
+ros2 run line_follower_color_recognition_py line_follower_cnn
+```
+A node használata során a robot a különböző színű vonalszakaszokon eltérő sebességgel megy végig. Ez a sebességkülönbség nem számottevő, csupán a különböző színek érzékeltetésére szolgál.
+| Szín  | Sebességszorzó |
+| :---: | :------------: |
+| piros | 1              |
+| zöld  | 0,9            |
+| kék   | 1,1            |

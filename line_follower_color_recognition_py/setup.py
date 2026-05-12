@@ -1,4 +1,5 @@
 from setuptools import find_packages, setup
+from glob import glob
 
 package_name = 'line_follower_color_recognition_py'
 
@@ -10,6 +11,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/network_model', glob('network_model/*'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -21,6 +23,7 @@ setup(
     entry_points={
         'console_scripts': [
             'line_follower = line_follower_color_recognition_py.line_follower:main',
+            'line_follower_cnn = line_follower_color_recognition_py.line_follower_cnn:main',
             'save_training_images = line_follower_color_recognition_py.save_training_images:main',
         ],
     },
