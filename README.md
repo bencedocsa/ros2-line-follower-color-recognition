@@ -153,3 +153,7 @@ ros2 run line_follower_color_recognition_py path_visualizer
 ```
 
 ![alt text][image5]
+
+# Bemutató
+
+A vonalkövető robot működés közben megtekinthető az alábbi linken:
