@@ -7,7 +7,8 @@
 [image5]: ./assets/path_visualizer.png "Vizualizációs node"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
-A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronika mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
+
+A feladat a Budapesti Műszaki és Gazdaságtudományi Egyetem mechatronikai mérnöki MSc képzés Kognitív robotika (BMEGEMINMKR) tantárgyához készült.
 
 Készítette:
 - Docsa Bence
@@ -16,6 +17,7 @@ Készítette:
 - Nagy Bertalan
 
 # Tartalomjegyzék
+
 - [Feladatleírás](#feladatleírás)
 - [Előkövetelmények](#előkövetelmények)
 - [TurtleBot3](#turtlebot3)
@@ -25,12 +27,14 @@ Készítette:
 - [Bemutató](#bemutató)
 
 # Feladatleírás
+
 A projekt megvalósítása során a következő követelményeket kellett teljesíteni:
 - Vonalkövetés és színfelismerés neurális hálóval
 - Saját vizualizációs node-ban megmutatni a robot által bejárt utat és a vonal színét az út során
 - A robot viselkedjen eltérően a különböző színű vonalak esetén
 
 # Előkövetelmények
+
 - Ubuntu 24.04
     - A projekt elkészítése során WSL 2 segítségével használtuk
 - [ROS 2 Jazzy](https://docs.ros.org/en/jazzy/index.html)
@@ -77,6 +81,7 @@ A projekt megvalósítása során a következő követelményeket kellett teljes
     - `numpy==1.26.4`
 
 # TurtleBot3
+
 A `burger` konfigurációjú TurtleBot3-at a [turtlebot3_burger.urdf](./line_follower_color_recognition/urdf/turtlebot3_burger.urdf) fájl írja le, szimulációs működését a [turtlebot3_burger/model.sdf](./line_follower_color_recognition/models/turtlebot3_burger/model.sdf) fájl tartalmazza.
 
 A robotmodell megtekinthető RViz-ben a [check_urdf.launch.py](./line_follower_color_recognition/launch/check_urdf.launch.py) launch fájl segítségével:
@@ -87,6 +92,7 @@ ros2 launch line_follower_color_recognition check_urdf.launch.py
 ![alt text][image1]
 
 # Pálya
+
 A projekt során használt pálya egy színes vonalat tartalmaz sötét vagy világos alapon. A vonal három szakaszból áll: piros, zöld és kék. A modellek a [gazebo_models](./line_follower_color_recognition/gazebo_models/) mappában találhatóak.
 
 A pálya megtekinthető és a robottal bejárható a [spawn_robot.launch.py](./line_follower_color_recognition/launch/spawn_robot.launch.py) launch fájl segítségével.
@@ -115,12 +121,13 @@ Ehhez segítségül használható a [line_follower](./line_follower_color_recogn
 ros2 run line_follower_color_recognition_py line_follower
 ```
 
-Robot manuálisan is irányítható:
+A robot manuálisan is irányítható:
 ```bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 # Neurális hálózat
+
 A projekt során készített kétkimenetű konvolúciós neurális hálózat (CNN) két klasszifikációt végez el a roboton lévő kamera képe alapján:
 - Meghatározza, hogy a robotnak mit kell tennie a vonal követése érdekében: előremenni, jobbra fordulni, balra fordulni.
 - Meghatározza, hogy a robot által követett vonal aktuális szakasza milyen színű: piros, kék, zöld.
@@ -148,6 +155,7 @@ A node használata során a robot a különböző színű vonalszakaszokon elté
 | kék   | 1,1            |
 
 # Vizualizációs node
+
 A robot által megtett utat és a követett vonal színét a [path_visualizer](./line_follower_color_recognition_py/line_follower_color_recognition_py/path_visualizer.py) node segítségével lehet kirajzoltatni RVizben.
 ```bash
 ros2 run line_follower_color_recognition_py path_visualizer
@@ -156,5 +164,10 @@ ros2 run line_follower_color_recognition_py path_visualizer
 ![alt text][image5]
 
 # Bemutató
+
+A teljes szimuláció egyben elindítható a [simulation.launch.py](./line_follower_color_recognition/launch/simulation.launch.py) launch fájl használatával:
+```bash
+ros2 launch line_follower_color_recognition simulation.launch.py
+```
 
 A vonalkövető robot működés közben megtekinthető az alábbi linken:

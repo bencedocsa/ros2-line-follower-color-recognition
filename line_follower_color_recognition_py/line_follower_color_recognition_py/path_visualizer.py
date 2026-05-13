@@ -48,7 +48,7 @@ class PathVisualizer(Node):
     def color_callback(self, msg):
         self.current_color = msg.data
 
-        self.get_logger().info(f"Current line color_idx: {self.current_color}")
+        print(f"Current line color_idx: {self.current_color}")
 
     def odom_callback(self, msg):
         current_point = Point()
