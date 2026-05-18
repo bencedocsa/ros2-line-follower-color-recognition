@@ -170,4 +170,6 @@ A teljes szimuláció egyben elindítható a [simulation.launch.py](./line_follo
 ros2 launch line_follower_color_recognition simulation.launch.py
 ```
 
-A vonalkövető robot működés közben megtekinthető az alábbi linken:
+A vonalkövető robot működés közben megtekinthető az alábbi képre kattintva:
+
+<a href="https://youtu.be/I9mQb31-4-M"><img width="600" src="./assets/video.jpg"></a>
