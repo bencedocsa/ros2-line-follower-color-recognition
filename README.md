@@ -5,6 +5,7 @@
 [image3]: ./assets/track_light.png "Pálya világos alapon"
 [image4]: ./assets/model_training.png "Tanítási eredmények"
 [image5]: ./assets/path_visualizer.png "Vizualizációs node"
+[image6]: ./assets/hungaroring.png "Hungaroring"
 
 # ROS 2 projekt a Kognitív robotika tárgyra (BMEGEMINMKR)
 
@@ -25,7 +26,7 @@ Készítette:
 - [Neurális hálózat](#neurális-hálózat)
 - [Vizualizációs node](#vizualizációs-node)
 - [Bemutató](#bemutató)
-- [Model tesztelése](#modell-tesztelése)
+- [Modell tesztelése](#modell-tesztelése)
 
 # Feladatleírás
 
@@ -179,9 +180,10 @@ A vonalkövető robot működés közben megtekinthető az alábbi képre kattin
 
 Továbbá a projekthez elkészült egy Hungaroringet formáló pálya is (sötét alapon): 
 
-![alt text](hungaroring.png)
+![alt text][image6]
 
-A neurális hálóval történő vonalkövetést ezen a tesztpályán is leteszteltük (a neurális háló pályaspecifikus tanítása nélkül), ami szintén sikeresen lefutott. 
+A neurális hálóval történő vonalkövetést ezen a pályán is leteszteltük. A robot sikeresen végighalad annak ellenére, hogy erről a pályáról nem használtunk képeket a neurális háló tanítása során.
 
-A szimulációról készült felvétel megtekinthető az alábbi linken:
-https://youtu.be/ILfv4pCEpLo
+A szimulációról készült felvétel megtekinthető az alábbi képre kattintva:
+
+<a href="https://youtu.be/ILfv4pCEpLo"><img width="600" src="./assets/hungaroring_video.jpg"></a>
