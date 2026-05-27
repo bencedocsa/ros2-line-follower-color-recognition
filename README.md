@@ -25,6 +25,7 @@ Készítette:
 - [Neurális hálózat](#neurális-hálózat)
 - [Vizualizációs node](#vizualizációs-node)
 - [Bemutató](#bemutató)
+- [Model tesztelése](#modell-tesztelése)
 
 # Feladatleírás
 
@@ -173,3 +174,14 @@ ros2 launch line_follower_color_recognition simulation.launch.py
 A vonalkövető robot működés közben megtekinthető az alábbi képre kattintva:
 
 <a href="https://youtu.be/I9mQb31-4-M"><img width="600" src="./assets/video.jpg"></a>
+
+# Modell tesztelése
+
+Továbbá a projekthez elkészült egy Hungaroringet formáló pálya is (sötét alapon): 
+
+![alt text](hungaroring.png)
+
+A neurális hálóval történő vonalkövetést ezen a tesztpályán is leteszteltük (a neurális háló pályaspecifikus tanítása nélkül), ami szintén sikeresen lefutott. 
+
+A szimulációról készült felvétel megtekinthető az alábbi linken:
+https://youtu.be/ILfv4pCEpLo
